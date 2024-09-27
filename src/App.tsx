@@ -1,9 +1,10 @@
+import LoadingPage from "./componenta/LoadingPage"
 
 function App() {
   return (
-    <div>
-      myCafe
-    </div>
+    <>
+    <LoadingPage />
+    </>
   )
 }
 
