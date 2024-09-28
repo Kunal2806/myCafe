@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 
 * {
     margin: 0;
@@ -12,6 +16,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* <LoadingPAge /> */
 
 .introContainer {
     height: 800px;
@@ -64,9 +70,120 @@
 }
 
 @keyframes loadDot {
-    from {}
+    0% {}
 
-    to {
+    50% {
         transform: translate(266px);
     }
+
+    100% {
+        transform: translate(0px);
+    }
+}
+
+/* <HomePAge.tsx /> */
+
+.homeContainer {
+
+    background-image: url("../public/image/Welcome.png");
+    background-size: cover;
+    background-color: #cccccc;
+    height: 800px;
+    width: 400px;
+    border-radius: 29px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.homeIntroText {
+    height: 210px;
+    width: 100%;
+    margin-top: 110px;
+    margin-left: 17px;
+}
+
+.homeWelcome {
+    font-size: 48.2px;
+    font-weight: 300;
+    font-family: Bakbak One;
+}
+
+.homeName {
+    color: #FE724C;
+    font-size: 53.8px;
+    font-weight: 300;
+    font-family: Audiowide;
+}
+
+.homeLove {
+    color: #896C6C;
+    margin-top: 20px;
+    font-size: 20.8px;
+    font-weight: 450;
+    font-family: Atma;
+}
+
+.homeLogo {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.homeLogo>img {
+    filter: blur(3px);
+    height: 80px;
+}
+
+.selectTableDiv {
+    display: flex;
+    flex-direction: column;
+    height: 319px;
+    width: 399px;
+}
+
+.selectTableBorder {
+    display: flex;
+}
+
+.homeSelectLine {
+    margin-top: 20px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.homeSelectText {
+    font-size: 25px;
+    color: white;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-family: Atma;
+}
+
+.selectTableNo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+#bookTable {
+    font-family: Atma;
+    color: white;
+    height: 46px;
+    width: 190px;
+    text-align: center;
+    font-size: 25px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+#bookTable>option {
+    color: black
 }

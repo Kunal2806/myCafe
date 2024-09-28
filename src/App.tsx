@@ -1,9 +1,11 @@
-import LoadingPage from "./componenta/LoadingPage"
+import HomePage from "./componenta/HomePage"
+// import LoadingPage from "./componenta/LoadingPage"
 
 function App() {
   return (
     <>
-    <LoadingPage />
+    {/* <LoadingPage /> */}
+    <HomePage />
     </>
   )
 }
