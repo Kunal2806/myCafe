@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 
 * {
@@ -81,43 +82,39 @@
     }
 }
 
-/* <HomePAge.tsx /> */
+/* <WelcomePAge.tsx /> */
 
-.homeContainer {
+.WelcomeContainer {
 
-    background-image: url("../public/image/Welcome.png");
+    background-image: url("./image/Welcome.png");
     background-size: cover;
     background-color: #cccccc;
     height: 800px;
     width: 400px;
     border-radius: 29px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
 }
 
-.homeIntroText {
+.WelcomeIntroText {
     height: 210px;
     width: 100%;
     margin-top: 110px;
     margin-left: 17px;
 }
 
-.homeWelcome {
+.WelcomeWelcome {
     font-size: 48.2px;
     font-weight: 300;
     font-family: Bakbak One;
 }
 
-.homeName {
+.WelcomeName {
     color: #FE724C;
     font-size: 53.8px;
     font-weight: 300;
     font-family: Audiowide;
 }
 
-.homeLove {
+.WelcomeLove {
     color: #896C6C;
     margin-top: 20px;
     font-size: 20.8px;
@@ -125,13 +122,13 @@
     font-family: Atma;
 }
 
-.homeLogo {
+.WelcomeLogo {
     display: flex;
     justify-content: center;
     margin: 40px;
 }
 
-.homeLogo>img {
+.WelcomeLogo>img {
     filter: blur(3px);
     height: 80px;
 }
@@ -147,14 +144,14 @@
     display: flex;
 }
 
-.homeSelectLine {
+.WelcomeSelectLine {
     margin-top: 20px;
     width: 100%;
     height: 2px;
     background-color: white;
 }
 
-.homeSelectText {
+.WelcomeSelectText {
     font-size: 25px;
     color: white;
     margin-left: 8px;
@@ -186,4 +183,205 @@
 
 #bookTable>option {
     color: black
+}
+
+/* <homePage /> */
+
+.homeContainer {
+    background-color: white;
+    height: 769px;
+    width: 365px;
+    border-radius: 29px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    margin-top: 20px;
+    margin-left: 11px;
+    margin-right: 11px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav .navImg{ 
+    width: 53.82px;
+    height: 56px;
+    border-radius: 22px;
+    box-shadow: 0px 4px 4px #CCC4C4;
+}
+
+.bookTableBox {
+    height: 33px;
+    width: 46px;
+    margin-right: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.navSelectBox {
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeText1 {
+    color: #FE724C;
+    font-size: 19.76px;
+    font-family: Atma;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.homeText2 {
+    height: 60.23px;
+    width: 272px;
+    font-size: 30px;
+    font-family: Sofia Sans;
+}
+
+.foodOption{
+    width:355.33px;
+    height: 82px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 10px;
+}
+
+.foodShow{
+    width: 49.01px;
+    height: 82px;
+    margin-left: 10px;
+    background-color: #FE724C;
+    border-radius: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.foodShow >img {
+    height: 41.47px;
+    width: 41.47px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.foodShow >h4{
+    font-weight: 100;
+    color: white;
+    font-size: 10px;
+}
+
+.foodShowOther {
+    width: 49.01px;
+    height: 82px;
+    margin-left: 10px;
+    border-radius: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.foodDisplay {
+    margin: auto;
+    height: 400px;
+    width: 363px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y:auto;
+    scrollbar-width: thin;
+    border-top: 2px solid black;
+}
+
+.foodDisplayItem {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.foodDisplayItem > img {
+    width: 323px;
+    height: 157.62px;
+    border-radius: 26px;
+}
+.foodDisplayItemDetail{
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+
+/* <Cart /> */
+
+
+.cartContainer {
+    background-color: white;
+    height: 800px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 29px;
+    display: flex;
+    flex-direction: column;
+}
+.navCart{
+    height: 105px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    gap: 102px;
+}
+
+
+.cartBack {
+    margin-left: 39px;
+    height: 40.53px;
+    width: 38px;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+.cartBack > img {
+    height: 10px;
+    width: 10px;
+}
+
+
+.totalDiv {
+    height:306px;
+    width:400px;
+}
+
+.totalItem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36.44px;
+    opacity: 54%;
+}
+
+.totalPrice{
+    width: 360px;
+    height: 91px;
+    border: 2px solid black;
+    border-radius: 23px;
+    margin: auto;
+    display: flex;
+    font-size: 36.44px;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.orderButton{
+    width: 196px;
+    height: 62.3px;
+    border-radius: 41.23px;
+    margin-left: 97px;
+    margin-top: 52px;
+    background-color: #FE724C;
+    font-size: 28.23px;
+    color: white;
 }

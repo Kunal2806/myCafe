@@ -1,34 +1,79 @@
+import { Link } from "react-router-dom";
+
 function HomePage() {
   return (
-    <div className="container">
-      <div className="homeContainer">
-        <div className="homeIntroText">
-          <h1 className="homeWelcome">Welcome to</h1>
-          <h1 className="homeName">my Cafe</h1>
-          <h5 className="homeLove">WE LOVE TO SERVE</h5>
-        </div>
-        <div className="homeLogo">
-          <img src="./image/logo.png" alt="logo" />
-        </div>
-        <div className="selectTableDiv">
-          <div className="selectTableBorder">
-            <div className="homeSelectLine"></div>
-            <p className="homeSelectText">select</p>
-            <div className="homeSelectLine"></div>
+    <>
+      <Link to="/home" />
+
+      <div className="container" style={{ backgroundColor: "#FCDCD4" }}>
+        <div className="homeContainer">
+          <div className="nav">
+            <img className="navImg" src="./image/logo.png" alt="logo" />
+            <div className="navSelectBox">
+              <div className="selectTableNo" style={{ margin: "0px" }}>
+                <select
+                  name="bookTable"
+                  id="bookTable"
+                  style={{
+                    color: "black",
+                    appearance: "none",
+                    width: "110px",
+                    height: "40px",
+                    fontSize: "22px",
+                  }}
+                >
+                  <option>table no.</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <div className="bookTableBox"></div>
+              </div>
+            </div>
+            <img className="navImg" src="./image/cart.png" alt="cart" />
           </div>
-          <div className="selectTableNo">
-            <select name="bookTable" id="bookTable">
-              <option selected disabled>
-                table no.
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+          <div className="homeText1">WE LOVE TO SERVE</div>
+          <div className="homeText2">What would you like to order</div>
+          <div className="foodOption">
+            <div className="foodShow">
+              <img src="./image/burger.png" alt="burger" />
+              <h4>Burger</h4>
+            </div>
+            <div className="foodShowOther">
+              <img src="./image/pizza.png" alt="pizza" />
+              <h4>Pizza</h4>
+            </div>
+          </div>
+          <div className="foodDisplay">
+            <div className="foodDisplayItem">
+              <img src="./image/item1.png" alt="item" />
+              <div className="foodDisplayItemDetail">Item Name</div>
+              <div className="foodDisplayItemDetail">₹200</div>
+            </div>
+            <div className="foodDisplayItem">
+              <img src="./image/item1.png" alt="item" />
+              <div className="foodDisplayItemDetail">Item Name</div>
+              <div className="foodDisplayItemDetail">₹200</div>
+            </div>
+            <div className="foodDisplayItem">
+              <img src="./image/item1.png" alt="item" />
+              <div className="foodDisplayItemDetail">Item Name</div>
+              <div className="foodDisplayItemDetail">₹200</div>
+            </div>
+            <div className="foodDisplayItem">
+              <img src="./image/item1.png" alt="item" />
+              <div className="foodDisplayItemDetail">Item Name</div>
+              <div className="foodDisplayItemDetail">₹200</div>
+            </div>
+            <div className="foodDisplayItem">
+              <img src="./image/item1.png" alt="item" />
+              <div className="foodDisplayItemDetail">Item Name</div>
+              <div className="foodDisplayItemDetail">₹200</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
