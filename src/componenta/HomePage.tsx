@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function HomePage() {
+  const [array, setArray] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(" http://127.0.0.1:8787/get");
+        const data = await response.json();
+        setArray(data);
+      } catch (error) {
+        console.error("fetch Error : ", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Link to="/home" />
@@ -45,31 +60,38 @@ function HomePage() {
             </div>
           </div>
           <div className="foodDisplay">
+            {/* {array.map((post: any) => ( */}
             <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
             </div>
             <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
             </div>
             <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
             </div>
             <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
             </div>
             <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
             </div>
+            <div className="foodDisplayItem">
+              <img src=".\food\burger\blackbean.jpeg" alt="item" />
+              <div className="foodDisplayItemDetail">fdsagasfdg</div>
+              <div className="foodDisplayItemDetail">asgasfdg</div>
+            </div>{" "}
+            {/* ))} */}
           </div>
         </div>
       </div>
