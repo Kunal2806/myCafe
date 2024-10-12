@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
-
 function LoadingPage() {
   return (
     <>
-      <Link to="/" />
       <div className="container">
         <div className="introContainer">
           <div className="intro">
