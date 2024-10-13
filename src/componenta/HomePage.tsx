@@ -3,29 +3,25 @@ import { Link, useParams } from "react-router-dom";
 
 function HomePage() {
   let { tableNo } = useParams();
-  const [table, setTableNo] = useState(tableNo);
-  // const [array, setArray] = useState([]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(" http://127.0.0.1:8787/get");
-  //       const data = await response.json();
-  //       setArray(data);
-  //     } catch (error) {
-  //       console.error("fetch Error : ", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // function handleSelect(e: any) {
-  //   console.log(e.target.value);
-  // }
-  // console.log("hello");
+  const [table, setTableNo] = useState(Number(tableNo));
+  const [array, setArray] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(" http://127.0.0.1:8787/menu");
+        const data = await response.json();
+        setArray(data);
+      } catch (error) {
+        console.error("fetch Error : ", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleClick = (e: any) => {
-    setTableNo(e.target.value);
+    setTableNo(Number(e.target.value));
   };
+
   return (
     <>
       <div className="container" style={{ backgroundColor: "#FCDCD4" }}>
@@ -36,7 +32,7 @@ function HomePage() {
               <select
                 name="bookTable"
                 id="bookTable"
-                defaultValue={tableNo}
+                defaultValue={table}
                 onChange={handleClick}
                 style={{
                   color: "black",
@@ -67,37 +63,13 @@ function HomePage() {
             </div>
           </div>
           <div className="foodDisplay">
-            {/* {array.map((post: any) => ( */}
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="\food\burger\blackbean.jpeg" alt="item" />
-              <div className="foodDisplayItemDetail">fdsagasfdg</div>
-              <div className="foodDisplayItemDetail">asgasfdg</div>
-            </div>
+            {array.map((post: any) => (
+              <div className="foodDisplayItem" key={post.id}>
+                <img src={post.img} alt="item" />
+                <div className="foodDisplayItemDetail">{post.name}</div>
+                <div className="foodDisplayItemDetail">{post.price}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
