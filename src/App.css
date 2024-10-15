@@ -322,10 +322,31 @@
     margin-top: 10px;
     margin-bottom: 25px;
 }
-.foodDisplayItem > img {
+.itemImageDiv {
     width: 323px;
     height: 157.62px;
     border-radius: 26px;
+    position: relative;
+    display: flex;
+    justify-content: right;
+    border: 2px solid black;
+}
+
+.itemImage {
+    width: 323px;
+    height: 157.62px;
+    border-radius: 26px;
+}
+
+.addItem {
+    position: absolute;
+    height: 35px;
+    opacity: 67%;
+}
+.addItem:active {
+    border: 5px solid white;
+    border-radius: 100%;
+    background-color: white;
 }
 .foodDisplayItemDetail{
     margin-left: 10px;

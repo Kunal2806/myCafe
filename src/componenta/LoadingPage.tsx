@@ -7,7 +7,7 @@ function LoadingPage() {
             <span>
               my
               <div className="introImg">
-                <img src="./image/logo.png" alt="logo" />
+                <img src="/image/logo.png" alt="logo" />
               </div>
             </span>
             <span>CAFE</span>
