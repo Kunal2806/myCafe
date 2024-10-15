@@ -3,14 +3,21 @@ import { Link, useParams } from "react-router-dom";
 
 function HomePage() {
   let { tableNo } = useParams();
+  const [selectType, setSelectType] = useState({
+    burger: "foodShow",
+    Pizza: "foodShowOther",
+  });
+  const [Type, setType] = useState("burger");
   const [table, setTableNo] = useState(Number(tableNo));
   const [array, setArray] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(" http://127.0.0.1:8787/menu");
         const data = await response.json();
         setArray(data);
+        console.log("worked");
       } catch (error) {
         console.error("fetch Error : ", error);
       }
@@ -22,6 +29,13 @@ function HomePage() {
     setTableNo(Number(e.target.value));
   };
 
+  function handleSelect(divName: string, className: string) {
+    setSelectType((prevClassName) => ({
+      ...prevClassName,
+      [divName]: className,
+    }));
+    setType(divName);
+  }
   return (
     <>
       <div className="container" style={{ backgroundColor: "#FCDCD4" }}>
@@ -53,23 +67,36 @@ function HomePage() {
           <div className="homeText1">WE LOVE TO SERVE</div>
           <div className="homeText2">What would you like to order</div>
           <div className="foodOption">
-            <div className="foodShow">
+            <div
+              className={selectType.burger}
+              onClick={() => {
+                handleSelect("burger", "foodShow");
+              }}
+            >
               <img src="/image/burger.png" alt="burger" />
               <h4>Burger</h4>
             </div>
-            <div className="foodShowOther">
+            <div
+              className={selectType.Pizza}
+              onClick={() => {
+                handleSelect("Pizza", "foodShow");
+              }}
+            >
               <img src="/image/pizza.png" alt="pizza" />
               <h4>Pizza</h4>
             </div>
           </div>
           <div className="foodDisplay">
-            {array.map((post: any) => (
-              <div className="foodDisplayItem" key={post.id}>
-                <img src={post.img} alt="item" />
-                <div className="foodDisplayItemDetail">{post.name}</div>
-                <div className="foodDisplayItemDetail">{post.price}</div>
-              </div>
-            ))}
+            {array.map(
+              (post: any) =>
+                post.Type === Type && (
+                  <div className="foodDisplayItem" key={post.id}>
+                    <img src={post.img} alt="item" />
+                    <div className="foodDisplayItemDetail">{post.name}</div>
+                    <div className="foodDisplayItemDetail">{post.price}</div>
+                  </div>
+                )
+            )}
           </div>
         </div>
       </div>
