@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import LoadingPage from "./LoadingPage";
 
 function HomePage() {
   let { tableNo } = useParams();
@@ -14,6 +13,7 @@ function HomePage() {
   const [array, setArray] = useState([]);
   const [bookId, setBookId] = useState(0);
   const [count, setCount] = useState(0);
+  const [price, setPrice] = useState(0);
   const data = {
     table_no: table,
     item_id: bookId,
@@ -49,9 +49,10 @@ function HomePage() {
     }));
     setType(divName);
   }
-  const handleItemId = (id: number) => {
+  const handleItemId = (id: number, prc: number) => {
     setBookId(id);
     setCount(count + 1);
+    setPrice(price + prc);
   };
 
   useEffect(() => {
@@ -107,7 +108,9 @@ function HomePage() {
                 <option value={3}>3</option>
               </select>
             </div>
-            <img className="navImg" src="/image/cart.png" alt="cart" />
+            <Link to={`/cart/${count}/${price}`}>
+              <img className="navImg" src="/image/cart.png" alt="cart" />
+            </Link>
           </div>
           <div className="homeText1">WE LOVE TO SERVE</div>
           <div className="homeText2">What would you like to order</div>
@@ -140,22 +143,22 @@ function HomePage() {
               </div>
             )}
             {array.map(
-              (post: any) =>
+              (post: any, index) =>
                 post.Type === Type && (
-                  <div className="foodDisplayItem" key={post.id}>
+                  <div className="foodDisplayItem" key={index}>
                     <div className="itemImageDiv">
                       <img
                         className="addItem"
                         src="/image/add.png"
                         alt="+"
                         onClick={() => {
-                          handleItemId(post.id);
+                          handleItemId(post.id, post.price);
                         }}
                       />
                       <img className="itemImage" src={post.img} alt="item" />
                     </div>
                     <div className="foodDisplayItemDetail">{post.name}</div>
-                    <div className="foodDisplayItemDetail">{post.price}</div>
+                    <div className="foodDisplayItemDetail">₹{post.price}</div>
                   </div>
                 )
             )}

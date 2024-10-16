@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/home/:tableNo" element={<HomePage />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/:count/:price" element={<Cart />} />
       </Routes>
     </>
   );

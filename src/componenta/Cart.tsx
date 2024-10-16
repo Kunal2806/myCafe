@@ -1,9 +1,38 @@
-import { Link } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 function Cart() {
+  const [array, setArray] = useState([]);
+  const [Barray, setBArray] = useState([]);
+
+  const { count, price } = useParams();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(" http://127.0.0.1:8787/menu");
+        const data = await response.json();
+        setArray(data);
+      } catch (error) {
+        console.error("fetch Error : ", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(" http://127.0.0.1:8787/book");
+        const data = await response.json();
+        setBArray(data);
+      } catch (error) {
+        console.error("fetch Error : ", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
-      <Link to="/cart" />
       <div className="container">
         <div className="cartContainer">
           <div className="navCart">
@@ -12,38 +41,27 @@ function Cart() {
             </button>
             Cart
           </div>
-
           <div className="foodDisplay">
-            <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
-            </div>
-            <div className="foodDisplayItem">
-              <img src="./image/item1.png" alt="item" />
-              <div className="foodDisplayItemDetail">Item Name</div>
-              <div className="foodDisplayItemDetail">₹200</div>
-            </div>
+            {array.map((post: any) =>
+              Barray.map(
+                (bpost: any, index) =>
+                  post.id === bpost.item_id && (
+                    <div className="foodDisplayItem" key={index}>
+                      <div className="itemImageDiv">
+                        <img className="itemImage" src={post.img} alt="item" />
+                      </div>
+                      <div className="foodDisplayItemDetail">{post.name}</div>
+                      <div className="foodDisplayItemDetail">₹{post.price}</div>
+                    </div>
+                  )
+              )
+            )}
           </div>
+
           <div className="totalDiv">
-            <div className="totalItem">2 items</div>
+            <div className="totalItem">{count}items</div>
             <div className="totalPrice">
-              <h4>Total</h4> <span>₹2000</span>
+              <h4>Total</h4> <span>₹{price}</span>
             </div>
             <button className="orderButton">Order</button>
           </div>
