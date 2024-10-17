@@ -86,7 +86,7 @@
 
 .WelcomeContainer {
 
-    background-image: url("./image/Welcome.png");
+    background-image: url("/image/Welcome.png");
     background-size: cover;
     background-color: #cccccc;
     height: 800px;
