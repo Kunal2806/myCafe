@@ -8,7 +8,9 @@ function Cart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(" http://127.0.0.1:8787/menu");
+        const response = await fetch(
+          " https://mycafeapi.kunalgoswami-2806.workers.dev/menu"
+        );
         const data = await response.json();
         setArray(data);
       } catch (error) {
@@ -21,7 +23,9 @@ function Cart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(" http://127.0.0.1:8787/book");
+        const response = await fetch(
+          " https://mycafeapi.kunalgoswami-2806.workers.dev/book"
+        );
         const data = await response.json();
         setBArray(data);
       } catch (error) {
