@@ -41,7 +41,7 @@ function Cart() {
         <div className="cartContainer">
           <div className="navCart">
             <button className="cartBack">
-              <img src="./image/back.png" alt="back" />
+              <img src="./image/logo.png" alt="logo" />
             </button>
             Cart
           </div>
