@@ -1,5 +1,4 @@
 // import LoadingPage from "./componenta/LoadingPage";
-import "./App.css";
 import Cart from "./componenta/Cart";
 
 import WelcomePage from "./componenta/WelcomePage";
@@ -7,7 +6,7 @@ import WelcomePage from "./componenta/WelcomePage";
 import HomePage from "./componenta/HomePage";
 
 import { Routes, Route } from "react-router-dom";
-
+import "./App.css";
 function App() {
   return (
     <>
