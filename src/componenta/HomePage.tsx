@@ -92,7 +92,7 @@ function HomePage() {
       <div className="container" style={{ backgroundColor: "#FCDCD4" }}>
         <div className="homeContainer">
           <div className="nav">
-            <img className="navImg" src="./image/logo.png" alt="logo" />
+            <img className="navImg" src="/image/logo.png" alt="logo" />
             <div className="navSelectBox">
               <select
                 name="bookTable"
@@ -114,7 +114,7 @@ function HomePage() {
               </select>
             </div>
             <Link to={`/cart/${count}/${price}`}>
-              <img className="navImg" src="./image/cart.png" alt="cart" />
+              <img className="navImg" src="/image/cart.png" alt="cart" />
             </Link>
           </div>
           <div className="homeText1">WE LOVE TO SERVE</div>
@@ -126,7 +126,7 @@ function HomePage() {
                 handleSelect("burger", "foodShow");
               }}
             >
-              <img src="./image/burger.png" alt="burger" />
+              <img src="/image/burger.png" alt="burger" />
               <h4>Burger</h4>
             </div>
             <div
@@ -135,7 +135,7 @@ function HomePage() {
                 handleSelect("Pizza", "foodShow");
               }}
             >
-              <img src="./image/pizza.png" alt="pizza" />
+              <img src="/image/pizza.png" alt="pizza" />
               <h4>Pizza</h4>
             </div>
           </div>
@@ -154,7 +154,7 @@ function HomePage() {
                     <div className="itemImageDiv">
                       <img
                         className="addItem"
-                        src="./image/add.png"
+                        src="/image/add.png"
                         alt="+"
                         onClick={() => {
                           handleItemId(post.id, post.price);
